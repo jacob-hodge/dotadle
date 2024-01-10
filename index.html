@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dotadle</title>
+	<link rel="stylesheet" href="dotadle/style.css">
+	
+	<link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEgHS3X78
+	AAAAAXNSR0IArs4c6QAAAkBJREFUOE9jZEADMjIyDehiyPwvX74c+PDhwwGYGCO6YnML4/9mFsY4zZg8YVYjAwMD3BIMA3IL0v7nFqQxHGguZ
+	5CwdYQb9P/nDwZN9wAGNQUT4gx42d3MwCyjxPDv9RsGsbx8hg+HNzEI2PoRNGB/TnayQ15pJsPz2loG/vAwhi/79oFdIRIZzcAoIMigrmoO4o
+	KcBg4HuBdkpSX2T5/Y5rBt9yGGgsochm9XLjP8vnadgT8sDO6Nv99/MbS39DKICAow9E2ZCzYEbIC+rub+KVM7HASEhRimT5oLNgAEvuzfx/D
+	t8mWwF0AAZMC0mQsY4qKDGQ7uP8pQUtbkCDKgwddMqf4vtzhD+4R2sMJjO7cxKOnqMsj8Z2R4s3wpg2RzM8O+9WsZJCRlGTSNjRk2rdrEsHvD
+	aoanr96CvdCQ7KZTv+/S4wN8olIMS1bMclg7cyaDhKIsg626NtyAZX0TwGJ/WXgZsnOrGkGWvv74HRIGihL8+0H0/RcfHfV1tf5PdDNmkMrNZ
+	/h97QbcAJBLLjBxM2SVt4Ci8YCrgdz+3Rcegb2AAoy0lP7b/vnMkL1rO4YBTZt2Mew4fhV/OrA0NfhvaWrAkFGWg2LAmaOnGEC4b9oC/AaAoj
+	PU38MBZsCzFcsY5JuawJo3rN7EsGrDDngaQEkHyP4AuWLh6jlgF7xcsZRBpqkZbEBUdBaK7TgNYGBgcJgzd8J+S0kRhndbVzMIZJUwpCQXHDh
+	54iwic0BtxAhEJJc4gAxC4mPN5gDr3O1krDeAOwAAAABJRU5ErkJggg==" rel="icon" type="image/x-icon" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<script src="dotadle/main.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
+</head>
+
+<body>
+
+	<div id="container">
+		<div id="game">
+
+			<header id = "topHeader">
+				<i class="far fa-question-circle" id="help"></i>
+				<h1 class="title"><span style = "color: rgb(151, 0, 0);">DOTA</span>DLE
+
+				</h1>
+          		<i class="fas fa-chart-bar" id="stats"></i>
+			</header>
+
+			<div id="timeBlock">
+				<svg id="timeBox" height="50" width="25">
+					<polygon points="5,15 20,35"></polygon>
+				</svg>
+				<header>
+					<h1 id="timeDisp"></h1>
+				</header>
+				<svg id="timeBox" height="50" width="25">
+					<polygon points="20,15 5,35"></polygon>
+				</svg>
+			</div>
+
+
+			<div id="gameboard">
+
+				<div id="topContainer">
+					<div id="rankBlock">
+						<img src="img/ranks/SeasonalRank0-0.png" id="rankImage">
+					</div>
+
+
+
+					<div id="itemBlock"></div>
+
+					<div id="aghsBlock">
+						<img src="img/aghs/Default.png" id="aghsImage">
+					</div>
+
+				</div>
+
+				<div id="bottomContainer">
+					<div id="backButton">
+						<button type="submit" class="btn-back"><i class="arrow left"></i></button>
+					</div>
+					<div id="nextButton">
+						<button type="submit" class="btn-next"><i class="arrow right"></i></button>
+					</div>
+				</div>
+
+
+
+				<div id="heroBlock"></div>
+				<div id="infoBlock">
+					<p id="winlossInfo"></p>
+					<p id="afterGameInfo"></p>
+				</div>
+
+				<form action="" autocomplete="off" id="form">
+
+					<div id="heroes-list-wrapper" class="heroes-list-wrapper">
+						<input id="hero-input" type="text" placeholder="Enter Hero...">
+					</div>
+					<button type="submit" class="btn-guess">Guess</button>
+				</form>
+
+				<div id="playerInfoBlock">
+					<p id="playerInfo"></p>
+				</div>
+			</div>
+
+
+
+			<div id="help-modal" class="modal">
+
+				<div class="modal-content">
+					<span class="close" id="close-help">&times;</span>
+
+					<p>You have 6 tries to guess the hero from a random Dota game.</p>
+
+					<p>
+						You will see a snapshot of the players inventory at 6 evenly-spaced intervals in the game.
+					</p>
+
+					<p>
+						Navigate through the game using the arrows.
+					</p>
+	
+					<hr />
+					<p>Data from the Stratz API.</p>
+				</div>
+			</div>
+	
+			
+	
+			<div id="stats-modal" class="modal">
+	
+				<div class="modal-content">
+					<span class="close" id="close-stats">&times;</span>
+	
+					<h2>STATISTICS</h2>
+	
+					<h3><strong>Total</strong>: <span id="total-played"></span></h3>
+	
+					<h3><strong>Wins</strong>: <span id="total-wins"></span></h3>
+	
+					<h3><strong>Win %</strong>: <span id="win-pct"></span></h3>
+	
+					<h3>
+						<strong>Current Streak</strong>: <span id="current-streak"></span>
+					</h3>
+				</div>
+			</div>
+		</div>
+
+		
+	</div>
+
+	
+</body>
+
+</html>

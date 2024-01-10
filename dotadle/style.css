@@ -1,0 +1,396 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(18, 18, 19);
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+#game {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#topHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 2em;
+}
+
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 214, 214);
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin: 0.4rem 0 0.4rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgb(58, 58, 60);
+}
+
+#help,
+#stats {
+  display: flex;
+  color: rgb(214, 121, 121);
+  font-size: 1.5rem;
+  cursor: pointer;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+}
+
+#gameboard {
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#topContainer {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#bottomContainer {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    padding-top: 0.5em;
+    padding-bottom: 2em;
+}
+
+.btn-next {
+    border: unset;
+    background: rgb(73, 73, 73);
+    padding: 0.5em;
+    cursor: pointer;
+    min-width: 100px;
+
+}
+
+.btn-back {
+    border: unset;
+    background: rgb(73, 73, 73);
+    padding: 0.5em;
+    cursor: pointer;
+    min-width: 100px;
+
+}
+
+#backButton {
+    padding-right: 10px;
+}
+
+#nextButton {
+    padding-left: 10px;
+}
+
+
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+
+#aghsBlock {
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#rankBlock {
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#aghsImage {
+    width: 60px;
+    height: auto;
+}
+
+#rankImage {
+    width: 60px;
+    height: auto;
+}
+
+
+#timeBlock {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    flex-direction: row;
+}
+
+
+#timeBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    stroke: rgb(168, 51, 67);
+    fill: rgb(18, 18, 19);
+    stroke-width: 3px;
+}
+
+#infoBlock {
+    color: gainsboro;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.4rem 0 0.4rem 0;
+    text-align: center;
+}
+
+#playerInfoBlock {
+    color: gainsboro;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.4rem 0 0.4rem 0;
+    text-align: center;
+}
+
+
+#timeDisp {
+    color: gainsboro;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0.4rem 0 0.4rem 0;
+    text-align: center;
+}
+
+
+.itemSquare {
+    border: 2px solid rgb(58, 58, 60);
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 0.1rem;
+    font-weight: bold;
+    vertical-align: middle;
+    box-sizing: border-box;
+    color: gainsboro;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+
+.heroSquare {
+    border: 2px solid rgb(58, 58, 60);
+    display: flex;
+    min-height: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+    vertical-align: middle;
+    box-sizing: flex-box;
+    color: gainsboro;
+    text-transform: uppercase;
+    user-select: none;
+    flex-direction: row;
+}
+
+
+
+
+#itemBlock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    /* width: 306px; */
+    box-sizing: border-box;
+}
+
+
+#heroBlock {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 600px;
+}
+
+
+
+input {
+    border: unset;
+    background: rgb(226, 226, 226);
+    padding: 0.5em;
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn-guess {
+    border: unset;
+    background: black;
+    padding: 0.5em;
+    color: rgb(255, 238, 217);
+    cursor: pointer;
+}
+
+.heroes-list-wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+
+.heroes-list {
+    list-style: none;
+    padding: unset;
+    margin: unset;
+    position: absolute;
+    width: 100%;
+    background-color: aliceblue;
+}
+
+.heroes-list li {
+    border: 1px solid rgb(177, 177, 177);
+    border-top: unset;
+
+}
+
+.heroes-list li:hover {
+    background: rgb(236, 236, 236);
+}
+
+
+.heroes-list button {
+    border: unset;
+    background: unset;
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.5em;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: rgb(18, 18, 19);
+    margin: 5% auto;
+    padding: 20px;
+    width: 80%;
+    color: gainsboro;
+    max-width: 500px;
+}
+
+.modal-content hr {
+    border: 1px solid rgb(58, 58, 60);
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#examples {
+    width: 80%;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .itemSquare {
+        min-width: 66px;
+        min-height: 48px;
+    }
+
+    #itemImage0,#itemImage1,#itemImage2,#itemImage3,#itemImage4,#itemImage5 {
+        min-width: 66px;
+        min-height: 48px;
+    }
+}
